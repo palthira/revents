@@ -1,13 +1,21 @@
-import React from 'react';
-import EventListItem from './EventListItem';
+import React from "react";
+import EventListItem from "./EventListItem";
 
-export default function EventList(props) {
-
-    return (
-      <>
-      {props.events.map(event => (
-        <EventListItem event={event} key={event.id}/>
-      ) )}
-      </>
-    );
+export default function EventList({
+  events,
+  selectEvent,
+  deleteEvent
+}) {
+  return (
+    <>
+      {events.map((event) => (
+        <EventListItem
+          event={event}
+          selectEvent={selectEvent}
+          deleteEvent={deleteEvent}
+          key={event.id}
+        />
+      ))}
+    </>
+  );
 }
